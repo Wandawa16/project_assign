@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <ul>
+    {% for page_name, _ in pages.items() %}
+        {% if page_name != 'index' %}  {# Exclude index.html from the list of links #}
+            <li><a href="{{ page_name }}.html">{{ page_name }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    <a href="about.html">About</a>
+</body>
+</html>
